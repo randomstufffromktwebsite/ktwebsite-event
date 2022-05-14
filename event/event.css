@@ -178,6 +178,17 @@ body {
     font-size: 10px;
 }
 
+.not-subscribe{
+    padding: 15px 45px;
+    color: white;
+    background-color: #91b0ff;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    transition: ease .2s;
+}
+
 .subscribe{
     padding: 15px 45px;
     color: white;
