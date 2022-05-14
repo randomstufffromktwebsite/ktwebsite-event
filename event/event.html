@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTWebsite Event</title>
+    <link rel="stylesheet" href="event.css">
+<body>
+    <div id="page">
+        <div class="black-screen-alpha">
+            <div class="notify-box" id="notify-box" style="display: none;">
+                <p class="notify-text" id="notify-text">asasas</p>
+                <svg class="close-button" id="close-button" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M12.7,12l6.6,6.6l-0.7,0.7L12,12.7l-6.6,6.6l-0.7-0.7l6.6-6.6L4.6,5.4l0.7-0.7l6.6,6.6l6.6-6.6l0.7,0.7L12.7,12z"></path>
+                </svg>
+            </div>
+            <div class="ktwebsite-event-box">
+                <div class="ktwebsite-event-box2">
+                    <div class="ktwebsite-event-box3" id="ktwebsite-event-box3">
+                        <img src="../img/khangteo.PNG" alt="KTWebsite Event" width="180px" height="130px" class="khangteo_image">
+                        <p class="ktwebsite-event-title --15-margin">KTWebsite Event '22</p>
+                        <p class="ktwebsite-event-description">A brand new KTWebsite is waiting...</p>
+                        <div class="ktwebsite-event-time-box" id="ktwebsite-event-time">
+                            <p class="ktwebsite-event-time" id="day">0</p>
+                            <p class="ktwebsite-event-time" id="dayText">days</p>
+                            <p class="ktwebsite-event-time" id="hour">0</p>
+                            <p class="ktwebsite-event-time" id="hourText">hours</p>
+                            <p class="ktwebsite-event-time" id="min">0</p>
+                            <p class="ktwebsite-event-time" id="minText">minutes</p>
+                            <p class="ktwebsite-event-time" id="sec">0</p>
+                            <p class="ktwebsite-event-time" id="secText">seconds</p>
+                            <p class="ktwebsite-event-time"> left until KTWebsite Event starts.</p>
+                        </div>
+                    </div>
+                    <div class="ktwebsite-event-box4" id="ktwebsite-event-box4">
+                        <button class="subscribe" id="subscribe">
+                            <p>Subscribe</p>
+                        </button>
+                        <p class="button-text-input" id="button-text-input">When you click "Subscribe", you have accepted to let your Gmail account subscribe to the notification mail of this event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event-background"></div>
+    </div>
+</body>
+<script type="text/javascript" src="./event.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+<script>
+    var googleUser = {};
+    function oauthLoad() {
+        
+        auth2 = gapi.auth2.init({
+          client_id: '27171698358-dt4gggh6jd5v5i5tmujla2oqrgdp436q.apps.googleusercontent.com',
+          cookiepolicy: 'single_host_origin',
+        });
+        attachSignin(document.getElementById('subscribe'));
+    }
+  
+    var notify_box = document.getElementById("notify-box");
+    var notify_text = document.getElementById("notify-text");
+  
+    var close_button = document.getElementById("close-button");
+  
+    function attachSignin(element) {
+      auth2.attachClickHandler(element, {},
+          function(googleUser) {
+            console.log(googleUser.getBasicProfile().getName());
+          }, function(error) {
+            notify_box.style.display = "flex";
+            notify_text.innerHTML = "Something went wrong. Please try again later.";
+            setTimeout(() => {
+              notify_box.style.display = "none";
+            }, 5000);
+          });
+    }
+
+    var startApp = function() {
+        gapi.load('auth2', oauthLoad);
+    };
+  
+    close_button.onclick = function(){
+      notify_box.style.display = "none";
+    }
+
+    startApp();
+</script>
+</html>

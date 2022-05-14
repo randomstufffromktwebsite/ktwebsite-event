@@ -1,0 +1,237 @@
+@font-face {
+    font-family: "Whitney Bold";
+    src: url('/fonts/whitneybold-webfont.woff2') format('woff2'),
+         url('/fonts/whitneybold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Whitney";
+    src: url('/fonts/whitney_medium-webfont.woff') format('woff'),
+         url('/fonts/whitney_medium-webfont.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Whitney Light";
+    src: url('/fonts/whitneylight-webfont.woff2') format('woff2'),
+            url('/fonts/whitneylight-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Menlo";
+    src: url('/fonts/menlo-regular-webfont.woff') format('woff'),
+            url('/fonts/menlo-regular-webfont.woff2') format('woff2');
+}
+
+h1,h2,h3,h4,h5,h6,p,span,li,a,button,input,textarea,label,select,option,form{
+    margin: 0;
+    font-family: "Whitney", Arial, Helvetica, sans-serif;
+}
+
+p{
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+input{
+    border: none;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+code {
+    font-family: "Menlo";
+    font-size: 12px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+div#page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #000;
+}
+
+.black-screen-alpha{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+    overflow-y: scroll;
+}
+
+.event-background {
+    background-image: url(../img/event1_background.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.ktwebsite-event-box{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.ktwebsite-event-box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.ktwebsite-event-box3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    transition: ease 1s;
+}
+
+.box3-disappear{
+    animation: box3-disappear .3s;
+}
+
+@keyframes box3-disappear{
+    0% {
+        top: -10px;
+    }
+
+    100%{
+        top: 68px;
+    }
+}
+
+.ktwebsite-event-box4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.box4-disappear {
+    animation: box4-disappear .3s;
+}
+
+@keyframes box4-disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.khangteo_image{
+    filter: brightness(50);
+    margin-bottom: 20px;
+}
+
+.--15-margin{
+    margin-bottom: 15px;
+}
+
+.ktwebsite-event-title{
+    font-size: 33px;
+}
+
+.ktwebsite-event-description{
+    font-size: 17px;
+}
+
+.ktwebsite-event-time-box{
+    margin-top: 15px;
+}
+
+.ktwebsite-event-time{
+    font-family: "Whitney Light";
+    font-size: 10px;
+}
+
+.subscribe{
+    padding: 15px 45px;
+    color: white;
+    background-color: #256aff;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    transition: ease .2s;
+}
+
+.subscribe:hover{
+    background-color: #80a4ff;
+}
+
+.subscribe:active{
+    background-color: #466ac5;
+    font-size: 18.5px;
+}
+
+.button-text-input{
+    font-size: 10px;
+}
+
+.notify-box{
+    border: 1px solid #256aff;
+    background-color: #000e2d;
+    margin: 7px;
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    fill: white;
+    animation: notifyBoxShow .3s;
+    position: relative;
+}
+
+.notify-text{
+    margin-block-start: auto;
+    margin-block-end: auto;
+}
+
+.close-button{
+    cursor: pointer;
+}
+
+@keyframes notifyBoxShow {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
