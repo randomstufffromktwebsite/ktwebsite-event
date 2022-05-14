@@ -3,6 +3,8 @@ var ktwebsite_event_time = document.getElementById("ktwebsite-event-time");
 
     // Run myfunc every second
     var myfunc = setInterval(function() {
+        document.getElementById('not-subscribe').style.display = 'none';
+        document.getElementById('subscribe').style.display = 'block';
 
     var now = new Date().getTime();
     var timeleft = countDownDate - now;
@@ -47,6 +49,8 @@ var ktwebsite_event_time = document.getElementById("ktwebsite-event-time");
 
     
     if (timeleft < 0) {
+        document.getElementById('not-subscribe').style.display = 'block';
+        document.getElementById('subscribe').style.display = 'none';
         clearInterval(myfunc);
         
         ktwebsite_event_time.style.display = "none";
